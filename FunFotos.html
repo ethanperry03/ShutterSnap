@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fun Fotos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/FunFotos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
+    <script src="http://code.jQuery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <div class="flex">
+        <div class="left">
+            <h3 style="font-family: 'Ephesis', cursive; font-size: 50px;">Fun Fotos</h3>
+
+            <div class="layout">
+            <div id="layout1"><img src="images/one.png" width="100" alt="layout 1 icon"></div>
+            <div id="layout2"><img src="images/two.png" width="100" alt="layout 2 icon"></div>
+            <div id="layout3"><img src="images/three.png" width="100" alt="layout 3 icon"></div>
+            <div id="layout4"><img src="images/four.png" width="100" alt="layout 2 icon"></div>
+            </div>
+            <p>Choose a layout</p>
+            <hr>
+
+            <form id="options">
+                <input type="color" id="backgroundColor" value="#ffffff">
+                <label for="backgroundColor">Background Color</label>
+                <br>
+
+                <input type="checkbox" id="objectFit">
+                <label for="objectFit">Fit to Box</label>
+                <br>
+
+                <input type="checkbox" id="borders">
+                <label for="borders">Image Borders</label>
+                <br><br>
+
+                <div id="thickAsThieves">
+                    <input type="button" id="build" value="Build">
+                    <input type="button" id="clear" value="Clear">
+                    <input type="button" id="delete" value="Remove Image">
+                </div>
+                <hr><br>
+                <input type="button" id="FAQ" value="FAQ">
+            </form>
+            
+            
+            <br>
+            <div class="flexy">
+                <div class="half"> 
+                    <p>ShutterSnap</p>
+                    <a href="http://cs.wheatoncollege.edu/~eperry/ShutterSnap/">
+                    <img class="width100" src="images/LOGO.png" alt="shuttersnap logo">
+                    </a>
+                </div>
+                <div class="half">
+                    <p>Upload</p>
+                    <img class="width100" src="images/upload.png" alt="upload icon">
+                </div>
+            </div>
+        </div>
+
+        <div class="right">  
+
+            <div id="book">
+                <div id="prev">
+                    <img src="images/transparent.png" style="float: right;" alt="left arrow icon">
+                </div>
+
+                <div id="preview">
+                    <div id="page1">
+                    </div>
+
+                    <div id="page2">
+                    </div>
+                </div>
+
+                <div id="next">
+                    <img src="images/rightArrow.png" alt="right arrow icon">
+                </div>
+
+            </div>
+            
+            <hr>
+            <form style="text-align: center;">
+                <label for="searchString">Use City, State, Country, or Year:</label>
+                <input type="text" id="searchString" name="string" value="" style="background-color: #f2fff2; border: none;">
+                <input type="button" value="Reset Search" id="resetSearch" style="background-color: #f2fff2; border: 2px solid #666666;">
+                
+                <p id="pageNumber" style="float: right;"></p>
+            </form>
+            <div id="main"></div>
+        </div>
+
+        <div id="message">
+            <form style="float: right; margin-top: 3%;"><input type="button" class="close" value="X"></form>
+            <h3 style="display: block;">Warning!</h3>
+            <p style="font-size: 1.4vw;">
+                Are you sure you wish to clear your current book? All of your progress will be lost and your
+                book will reset. Confirm to clear your old book.
+            </p>
+            <br>
+            <form><input type="button" id="confirmClear" value="Confirm" ></form>
+        </div>
+
+        <div id="messageFAQ">
+            <form style="float: right; margin-top: 3%;"><input type="button" class="close" value="X"></form>
+            <h3 style="display: block;">Fun Fotos Photo Album Guide</h3>
+            
+            <table id="tableFAQ" >
+                <tr>
+                    <td class="featureName">Build Book</td>
+                    <td>The build book button takes your default selections and creates a photo album default in
+                        your accounts database. Select your layout, background color, and subset of photos using the
+                        search feature. This is a great starting point to creating a final product!
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td class="featureName">Clear</td>
+                    <td>This will first give you a warning letting you know that your book will be wiped from your
+                        accounts database. This allows you to start fresh with a new built book or from scratch!
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td class="featureName">Layouts</td>
+                    <td>You have the option of having 1, 2, 3, or 4 images per page across your entire album!
+                        Select the one you want to build the default book but also change the layout as you go 
+                        to see which you like best.
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td class="featureName">Background Color</td>
+                    <td>You wil be able to set a constant color across your entire book upon default build 
+                        but also change the color per individual page spread.
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td class="featureName">Fit Image</td>
+                    <td>We know not all images have the same aspect ratios, so feel free to experiment with 
+                        fitting your images to the layout squares or letting them retain their original shapes.
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td class="featureName">Borders</td>
+                    <td>Borders are great to allow you to see the fields in which items need to be placed into.
+                        Note that when your book is finalized, you should uncheck the borders so your final product
+                        is a much nicer souvenir. 
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td class="featureName">Remove Image</td>
+                    <td>If you wish to remove an image you placed to either leave that square blank or place a new 
+                        photo, click on the image you wish to remove, then click the remove button.
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td class="featureName">Search Database</td>
+                    <td>Use search terms to narrow down your set of photos when trying to select from your database. 
+                        Note that whatever is in the search bar upon a build button call will be the subset used
+                        in creating the new book.
+                    </td>
+                </tr>
+    
+            </table>
+        </div>
+
+    </div>
+
+
+    <!-- Event handler for changing arrows -->
+
+    <script src="js/book.js"></script>
+    <script src="js/images.js"></script>
+    <script src="js/searchANDturn.js"></script>
+    <script src="js/layoutANDfaq.js"></script>
+    <script src="js/load.js"></script>
+
+</body>
+
+</html>
